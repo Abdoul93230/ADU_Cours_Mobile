@@ -3,6 +3,40 @@ function Home() {
     <div className="max-w-4xl mx-auto">
       <h1 className="text-4xl font-bold mb-8">Formation React Native (20h)</h1>
       
+      {/* Méthodologie d'Enseignement */}
+      <section className="bg-white p-6 rounded-lg shadow-md mb-8">
+        <h2 className="text-2xl font-semibold mb-4">Méthodologie d'Enseignement</h2>
+        <div className="space-y-6">
+          <div>
+            <p className="text-gray-700 mb-4">
+              Cette formation adopte une approche pratique et progressive, centrée sur le développement d'une application mobile complète. L'apprentissage se fait par la pratique, avec 70% du temps consacré aux exercices pratiques et 30% à la théorie.
+            </p>
+
+            <p className="text-gray-700 mb-4">
+              Chaque session est structurée pour maximiser l'apprentissage : nous commençons par une introduction théorique courte, suivie d'une démonstration pratique, puis les apprenants mettent en pratique les concepts à travers des exercices guidés.
+            </p>
+
+            <h3 className="text-xl font-semibold mb-2">Progression du Cours</h3>
+            <div className="space-y-4 text-gray-700">
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="font-semibold">Module 1 (6h) : Les Fondamentaux</p>
+                <p>Mise en place de l'environnement et création des premières fonctionnalités de l'application. Cette phase établit les bases solides nécessaires pour la suite du développement.</p>
+              </div>
+
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="font-semibold">Module 2 (8h) : Développement des Fonctionnalités</p>
+                <p>Implémentation des fonctionnalités principales de l'application, en se concentrant sur la navigation et la gestion des données.</p>
+              </div>
+
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="font-semibold">Module 3 (6h) : Finalisation et Enrichissement</p>
+                <p>Intégration des fonctionnalités avancées et préparation de l'application pour un environnement de production.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Introduction à React Native */}
       <section className="bg-white p-6 rounded-lg shadow-md mb-8">
         <h2 className="text-2xl font-semibold mb-4">Introduction à React Native</h2>
