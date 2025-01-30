@@ -1,4 +1,4 @@
-import CodeBlock from '../components/CodeBlock';
+import CodeBlock from "../components/CodeBlock";
 
 function Module2() {
   const navigationSetupCode = `
@@ -6,34 +6,50 @@ function Module2() {
 npm install @react-navigation/native @react-navigation/stack
 
 // Dans App.js
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import HomeScreen from "./screens/HomeScreen";
+import AddNoteScreen from "./screens/AddNoteScreen";
+import NoteDetailScreen from "./screens/NoteDetailScreen";
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen 
-          name="NotesList" 
-          component={NotesListScreen}
-          options={{ title: 'Mes Notes' }}
+      <Stack.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: "#4CAF50",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        }}
+      >
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: "Notes & Tasks" }}
         />
-        <Stack.Screen 
-          name="NoteDetail" 
+        <Stack.Screen
+          name="AddNote"
+          component={AddNoteScreen}
+          options={{ title: "Nouvelle Note" }}
+        />
+        <Stack.Screen
+          name="NoteDetail"
           component={NoteDetailScreen}
-          options={{ title: 'Détail de la Note' }}
-        />
-        <Stack.Screen 
-          name="CreateNote" 
-          component={CreateNoteScreen}
-          options={{ title: 'Nouvelle Note' }}
+          options={{ title: "Détails" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
   );
-}`;
+}
+`;
 
   const asyncStorageCode = `
 // Installation d'AsyncStorage
@@ -106,14 +122,16 @@ const NotesListScreen = () => {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Module 2: Navigation et Données</h1>
-      
+      <h1 className="text-3xl font-bold mb-6">
+        Module 2: Navigation et Données
+      </h1>
+
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">Navigation Multi-écrans</h2>
         <div className="bg-white p-6 rounded-lg shadow-md">
           <p className="mb-4">Configuration de React Navigation :</p>
           <CodeBlock code={navigationSetupCode} language="jsx" />
-          
+
           <div className="mt-6 p-4 bg-yellow-50 rounded-lg">
             <h3 className="font-semibold text-lg mb-2">Exercice Pratique 1</h3>
             <p>Implémentez la navigation entre trois écrans :</p>
@@ -131,7 +149,7 @@ const NotesListScreen = () => {
         <div className="bg-white p-6 rounded-lg shadow-md">
           <p className="mb-4">Utilisation d'AsyncStorage :</p>
           <CodeBlock code={asyncStorageCode} language="jsx" />
-          
+
           <div className="mt-6 p-4 bg-yellow-50 rounded-lg">
             <h3 className="font-semibold text-lg mb-2">Exercice Pratique 2</h3>
             <p>Créez un système de persistence complet :</p>
@@ -149,7 +167,7 @@ const NotesListScreen = () => {
         <div className="bg-white p-6 rounded-lg shadow-md">
           <p className="mb-4">Implémentation du système de filtrage :</p>
           <CodeBlock code={filteringCode} language="jsx" />
-          
+
           <div className="mt-6 p-4 bg-yellow-50 rounded-lg">
             <h3 className="font-semibold text-lg mb-2">Exercice Pratique 3</h3>
             <p>Ajoutez les fonctionnalités de recherche :</p>
